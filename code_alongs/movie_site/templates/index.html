@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Movies App</title>
+  </head>
+  <body>
+  <h1 class="movie-heading">Welcome, to the movies app</h1>
+  <h4>Users:</h4>
+  <ul class="users">
+    {% for user in users %}
+    <li>{{user.username}}</li>
+    {% endfor %}
+  </ul>
+  <form method="post" action="/post_user">
+    <label for="un">Username: </label>
+    <input class="username-form" type="text" name="un" pattern="[a-zA-Z0-9]+" required/>
+
+    <label for="em">email: </label>
+    <input class="email-form" type="email" name="em" required/>
+
+    <input type="submit" value="Send" />
+
+    {{integError}}
+  </form>
+  </body>
+</html>
