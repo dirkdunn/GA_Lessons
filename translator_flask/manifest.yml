@@ -1,0 +1,9 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: translator_flask
+  host: translatorflask
+  disk_quota: 1024M
+  buildpack: python_buildpack
