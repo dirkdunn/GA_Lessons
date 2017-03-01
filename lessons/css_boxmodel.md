@@ -85,8 +85,8 @@ Let's go into our existing `index.html` and `styles.css` and add some stuff to i
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-	<p class="paragraph1">This is a paragraph</p>
-	<p class="paragraph2">This is a paragraph</p>
+	<p class="paragraph1 box">This is a paragraph</p>
+	<p class="paragraph2 box">This is a paragraph</p>
   </body>
 ```
 
@@ -107,7 +107,7 @@ Let's check this out in our chrome browser with the developer tools. As you can 
 ```css
 .paragraph1 {
   background: red;
-  padding:20px;
+  padding: 20px;
   border: 5px solid blue;
 }
 
@@ -120,27 +120,24 @@ Let's check this out in our chrome browser with the developer tools. As you can 
 
 > Instructor note: Be sure to cover all the different property syntaxes for padding.
 
-Let go ahead and add `margin: 10px;` and `border: 10px solid black;` to the padding class as well. Let's inspect that element in the browser and you can see Chrome's clear depiction of content, padding, border and margin.
+Let go ahead and add `margin: 10px;`  to `.paragraph2`. If we inspect that element in the browser we can see Chrome's clear depiction of content, padding, border and margin.
 
 ```css
-p {
-  background: red;
-  border: 10px solid black;
+.paragraph2 {
+  background: blue;
+  padding: 50px;
+  border: 5px solid red;
   margin:10px;
-  height: 100px;
-  width: 20%;
-}
-
-p.padding {
-  padding:10px;
 }
 ```
+---
 
 #### Active Learning
-Pair together in groups of two, Go ahead and draw the box with class `.padding` on your desk, which parts of each box are the content, padding, border & margin?
+Pair together in groups of two, Let's draw this webpage on our desks, and mark where the content, padding, border and margin are.
 
+---
 
-All these different sizings can be confusing. This can especially be frustrating when you think something's 20 % when in actuality it isn't.  Enter box-sizing.
+All these different sizings can be confusing. This can especially be frustrating when you think something's 20% when in actuality it isn't.  Enter box-sizing.
 
 At the top of our `styles.css`:
 
@@ -152,105 +149,8 @@ At the top of our `styles.css`:
 
 Now when we refresh, all of our 20% widths are the same regardless of padding. It also includes border! However, it does not include the margin. 
 
-* Now go add four divs with separate id's into the html
-* Inside our CSS page, make the squares 100px and the following colors: orange, blue, green, and purple
-
-```html
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Box Model Squares</title>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-  </head>
-  <body>
-    <div id="square1">square1</div>
-    <div id="square2">square2</div>
-    <div id="square3">square3</div>
-    <div id="square4">square4</div>
-  </body>
-</html>
-```
-
-```css
-#square1 {
-  background-color: orange;
-  height: 100px;
-  width: 100px;
-}
-#square2 {
-  background-color: blue;
-  height: 100px;
-  width: 100px;
-}
-#square3 {
-  background-color: green;
-  height: 100px;
-  width: 100px;
-}
-#square4 {
-  background-color: purple;
-  height: 100px;
-  width: 100px;
-}
- ```
- 
-> In Chrome, inspect elements on existing web pages and view the box model under the "computed" tab
-
 
 ## CSS Properties
-
-#### Property: Border
-Borders can be set in two ways: all at once or individually
-
-> WE DO: Let's add some thick borders to our divs
-
-```css
-div {
-	border: 5px solid black;
-}
-```
-
-####Property: Margin
-There are three ways to set margin with CSS:
-
-```css
- div {
-	 margin-top: /*some value*/;
-	 margin-right: /*some value*/;
-	 margin-bottom: /*some value*/;
-	 margin-left: /*some-value*/;
- }
- ```
-You can set them all at once:
-
-```css
-div{
-	margin: 1px 2px 3px 4px; 
-}
-```
-
-You can do top-bottom and right-left:
-
-```css
-div{
-	margin: 0 auto;
-}
-```
-
-What if value is `auto`? This tells the document to automatically put equal left and right margins on our element, centering it on the page, as long as it has a specific width.
-
-
-> YOU DO: add margin around your squares
-
-
-####Property: Padding
-Padding can be set in two ways (all at once or individually)
-
-```css
-div {
-	padding: 25px
-}
-```
 
 #### Property: Box-Sizing
 `box-sizing` is a CSS3 property that helps to make building layouts more intuitive for developers.
