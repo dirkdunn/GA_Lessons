@@ -6,10 +6,9 @@ By the end of this lesson students will be able to:
 - Explain the CSS Box Model (lecture)
 - Adjust element spacing using padding and margin (lab)
 - Describe the difference between block, inline-block, and inline elements (lab)
+- Create floating elements to position content removed from the standard document flow (header, then switch to flexbox)
 
 - Explain the difference between and use cases of: static, relative, fixed, & absolute positioning (maybe)
-
-- Create floating elements to position content removed from the standard document flow (header, then switch to flexbox)
 
 **Lab:**
 - Explain what flexbox is
@@ -43,19 +42,15 @@ Each HTML element you put on the page is essentially a container, or a box for w
 - Every html element has multiple layers to it, kind of like an onion, the layers go as follows
 
 - Content: The text "Hello, World"
-- Padding: The space between the text and the border.
+- Padding: The space between the content and the border.
 - Border: The border of the box
 - Margin: The space between the html element and it's surrounding content.
 
-When you give an element a height and width, the **content** itself will be that height and width.
-
-What the size doesn't include:
-
-- padding
-- border
-- margin
-
 ![](https://dl.dropboxusercontent.com/s/capg35hblhr6o7v/Screenshot%202015-10-13%2014.11.39.png?dl=0)
+
+> Instructor Note: Draw this model on the board, around the `<p>Hello World</p>` tag.
+
+When you change an elements height and width, the **content** itself will be that height and width, not any other part of the box model. (?)
 
 You can think of the Box Model like a house where the furniture is the content, the space from the couch to the walls is the padding, the walls around the house is the border, and the yard from house to house is the margin.
 
@@ -63,6 +58,7 @@ You can think of the Box Model like a house where the furniture is the content, 
 - **Border** - a border that goes around the padding and content; the border is affected by the background color of the box (house walls)
 - **Padding** - clears an area around the content; the space between the content and the border; the padding is affected by the background color of the box (space between walls and furniture)
 - **Content** - The content of the box, where text and images appear (furniture)
+
 
 [Interactive Box Model](http://guyroutledge.github.io/box-model/)
 
@@ -89,34 +85,40 @@ Let's go into our existing `index.html` and `styles.css` and add some stuff to i
     <link rel="stylesheet" type="text/css" href="css/styles.css">
   </head>
   <body>
-	<p>This is a paragraph</p>
-	<p class="padding">This is a paragraph</p>
+	<p class="paragraph1">This is a paragraph</p>
+	<p class="paragraph2">This is a paragraph</p>
   </body>
 ```
 
 In `styles.css`:
 
 ```css
-p {
+.paragraph1 {
   background: red;
-  height: 100px;
-  width: 20%;
+}
+
+.paragraph2 {
+  background: blue;
 }
 ```
 
-Let's check this out in our chrome browser with the developer tools. As you can see, everything is identical. Which makes sense. Let's go ahead and add some padding to the html element with class "padding". In `styles.css`:
+Let's check this out in our chrome browser with the developer tools. As you can see, we have two paragraph tags, and each of them are a different color, let's add some padding and border and see what happens:
 
 ```css
-p {
+.paragraph1 {
   background: red;
-  height: 100px;
-  width: 20%;
+  padding:20px;
+  border: 5px solid blue;
 }
 
-p.padding {
-  padding:10px;
+.paragraph2 {
+  background: blue;
+  padding: 50px;
+  border: 5px solid red;
 }
 ```
+
+> Instructor note: Be sure to cover all the different property syntaxes for padding.
 
 Let go ahead and add `margin: 10px;` and `border: 10px solid black;` to the padding class as well. Let's inspect that element in the browser and you can see Chrome's clear depiction of content, padding, border and margin.
 
