@@ -3,11 +3,17 @@
 ### Lesson Objectives
 By the end of this lesson students will be able to: 
 
-- Explain the CSS Box Model
-- Adjust element spacing using padding and margin
-- Explain the difference between and use cases of: static, relative, fixed, & absolute positioning
-- Create floating elements to position content removed from the standard document flow
-- Use flexbox to adjust content in their CSS
+- Explain the CSS Box Model (lecture)
+- Adjust element spacing using padding and margin (lab)
+- Describe the difference between block, inline-block, and inline elements (lab)
+
+- Explain the difference between and use cases of: static, relative, fixed, & absolute positioning (maybe)
+
+- Create floating elements to position content removed from the standard document flow (header, then switch to flexbox)
+
+**Lab:**
+- Explain what flexbox is
+- Use flexbox to position content on webpages
 
 ### Review
 - Difference between block, inline, and inline-block elements.
