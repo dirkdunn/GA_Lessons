@@ -71,8 +71,7 @@ $ mkdir box-model
 $ cd box-model
 $ touch index.html
 $ mkdir css
-$ touch style.css
-$ cd ..
+$ touch css/style.css
 ```
 
 Let's go into our existing `index.html` and `styles.css` and add some stuff to illustrate what I mean. In `index.html`:
@@ -120,14 +119,14 @@ Let's check this out in our chrome browser with the developer tools. As you can 
 
 > Instructor note: Be sure to cover all the different property syntaxes for padding.
 
-Let go ahead and add `margin: 10px;`  to `.paragraph2`. If we inspect that element in the browser we can see Chrome's clear depiction of content, padding, border and margin.
+Let go ahead and add `margin-top: 100px;`  to `.paragraph2`. If we inspect that element in the browser we can see Chrome's clear depiction of content, padding, border and margin.
 
 ```css
 .paragraph2 {
   background: blue;
   padding: 50px;
   border: 5px solid red;
-  margin:10px;
+  margin:100px;
 }
 ```
 ---
@@ -136,6 +135,22 @@ Let go ahead and add `margin: 10px;`  to `.paragraph2`. If we inspect that eleme
 Pair together in groups of two, Let's draw this webpage on our desks, and mark where the content, padding, border and margin are.
 
 ---
+
+Now that we have a better idea of how the model model works, what happens if we add a width of 100% to one of our paragraphs?
+
+```css
+.paragraph2 {
+  background: blue;
+  padding: 50px;
+  border: 5px solid red;
+  margin:100px;
+  width:100%;
+}
+```
+
+Weird, it looks like the element is actually wider that the screen, and now we have to scroll horizontally, why is this?
+
+The width attribute targets the **content** of the element only, so by giving it a width of 100%, we now have an element of 100% width, plus 50px padding, plus 100px margin. 
 
 All these different sizings can be confusing. This can especially be frustrating when you think something's 20% when in actuality it isn't.  Enter box-sizing.
 
@@ -158,7 +173,7 @@ Now when we refresh, all of our 20% widths are the same regardless of padding. I
 * **content-box**: Default. The width and height of an element does __not__ include padding or borders
 * **border-box**: The width of an element includes the padding and borders (not margin)
 
-> WE DO: Add `box-sizing: border-box` property to the `div`
+> WE DO: Add `box-sizing: border-box` property to the `.paragraph2`
 
 #### Property: Display
 * An **inline** element 
@@ -190,112 +205,6 @@ Now when we refresh, all of our 20% widths are the same regardless of padding. I
 
 [Favorite Cities](https://gist.github.com/BritneyJo/0fc7cd6b47bf78892251a39a738eaaea)
 
-
-### Property: position
-
-* Static is the default value. An element positioned with "position: static" is not positioned in any special way. Follows the natural flow of the document. 
-
-* Relative behaves just like "static" unless you add "top", "bottom", "left", or "right". A page element with relative positioning gives you control to absolutely position children elements inside of it.
-	
-	```html
-	<style type="text/css">
-	
-	ul {
-		position: relative;
-		top: 400px;
-		left: 50px;
-	}
-	
-	</style>
-	```
-
-
-* Fixed elements are always positioned in the same location, even if the user scrolls. An element with fixed position is positioned relative to the browser window.
-
-	```html
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>CSS Positioning</title>
-	<style type="text/css">
-	
-	body {
-		background: #ccc;
-	}
-	img {
-		position: fixed;
-		right: 0;
-		bottom: 0;
-	}
-	
-	</style>
-	</head>
-	<body>
-	<ul>
-		<li>Austin</li>
-		<li>Dallas</li>
-		<li>Houston</li>
-		<li>Amarillo</li>
-	</ul>
-	<img src="https://ga-core.s3.amazonaws.com/production/uploads/program/default_image/3677/thumb_thumb_thumb_Partner-Happy-Hours-General.jpg" alt="">
-	</body>
-	</html>
-	```
-
-* Absolute elements are removed from the normal flow and can overlap other elements. They are positioned relative to the browser window unless a parent element is position: relative.
-
-	```html
-	<!DOCTYPE html>
-	<html>
-	<head>
-	<title>CSS Positioning</title>
-	<style type="text/css">
-	
-	body {
-		background: #ccc;
-	}
-	ul {
-		position: relative;
-	}
-	li {
-		height: 100px;
-	}
-	img {
-		position: fixed;
-		right: 0;
-		bottom: 0;
-	}
-	.relative {
-		position: relative;
-		left: 150px;
-	}
-	.absolute {
-		position: absolute;
-		left: 150px;
-	}
-	
-	</style>
-	</head>
-	<body>
-	<ul>
-		<li>Austin</li>
-		<li>Dallas</li>
-		<li class="absolute">Houston</li>
-		<li>Amarillo</li>
-	</ul>
-	<img src="https://ga-core-production-herokuapp-com.global.ssl.fastly.net/assets/ga-lockup-1788582934ade008a8ea6068b784b8ee.png" alt="">
-	<footer>&copy; 2015 General Assembly</footer>
-	</body>
-	</html>
-	```
-
-### Positioning Exercise
-
-[Operation](https://github.com/ga-wdi-exercises/positioning_operation)
-
-### Property: width
-
-##### width vs. max-width
 
 ##### measurements units:
 
@@ -391,6 +300,6 @@ The "clearfix" workaround is used on parent containers with floating elements in
 }
 ```
 
-###The Future: Flexbox
-
+### Flexbox
+##### width vs. max-width
 [Flexbox Froggy](http://flexboxfroggy.com)
