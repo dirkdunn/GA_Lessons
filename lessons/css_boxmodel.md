@@ -300,6 +300,15 @@ The "clearfix" workaround is used on parent containers with floating elements in
 }
 ```
 
-### Flexbox
-##### width vs. max-width
+## Flexbox Codealong
+
+#### What is flexbox?  
+Flexbox is a new layout mode that comes built in with CSS3. So far we have seen a couple layout modes already:
+- Block
+- Inline-block
+- Inline
+
+We can think of flexbox as a super charged built-in layout mode
+
+
 [Flexbox Froggy](http://flexboxfroggy.com)
