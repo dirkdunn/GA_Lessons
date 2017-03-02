@@ -308,6 +308,23 @@ Flexbox is a new layout mode that comes built in with CSS3. So far we have seen 
 - Inline-block
 - Inline
 
+#### justify-content
+Specifies how items should be aligned horizontally within the flex container. Vertically if content is in column direction.
+#### align-items
+Specifies how items should be aligned vertically within the flex container
+#### flex-direction
+Specifies the direction that the items face, row, or column.
+order
+Given to an item within the flex container, is an integer, the higher it is, the more at the end it is.
+#### align-self
+Given to an item within the flex container, for aligning items vertically
+#### flex-wrap
+Applied to flex container, tells flex box to break items to a new line if there is not enough room, normally they will squish.
+#### flex-flow
+Applied to flex container, combines flex-direction and flex-wrap into one command.
+align-content
+
+
 We can think of flexbox as a super charged built-in layout mode
 
 Begin code along
