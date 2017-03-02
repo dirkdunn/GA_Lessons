@@ -310,5 +310,7 @@ Flexbox is a new layout mode that comes built in with CSS3. So far we have seen 
 
 We can think of flexbox as a super charged built-in layout mode
 
+Begin code along
+
 
 [Flexbox Froggy](http://flexboxfroggy.com)
