@@ -1,0 +1,130 @@
+html {
+  font-family: sans-serif;
+  background: rgb(64, 136, 245);
+  font-size:16px;
+}
+
+body {
+  margin:0;
+}
+
+.columns {
+  /*display: flex;*/
+}
+
+.column {
+  /*display:flex;*/
+  /* Makes the articles stacked vertically */
+  flex-direction: column;
+  flex:1;
+  padding:10px;
+}
+
+.main-column {
+  flex: 2;
+}
+
+
+.article {
+  /* Stretches the articles to fill up the remaining space */
+  flex: 1;
+  display:flex;
+  color: rgb(88, 87, 88);
+  margin: 10px;
+  background:#fff;
+  /*border:5px solid seagreen;*/
+  box-shadow: 1px 2px 2px rgb(14, 106, 181);
+  flex-direction:column; /* Makes all children stack vertically */
+  flex-basis: auto; /* sets initial element size based on its contents  */
+}
+
+.article-title {
+  color:rgb(23, 23, 23);
+}
+
+.article-body {
+  display:flex;
+  flex:1;
+  flex-direction: column;
+  padding:20px;
+
+}
+
+.article-content {
+  flex: 1; /* This will make the content fill up the remaining space, and thus push the information bar at the bottom */
+}
+
+.article-image {
+  margin:0;
+  max-height:500px;
+  overflow:hidden;
+}
+
+.article-info {
+  display:flex;
+  justify-content: space-between;
+}
+
+.first-article {
+
+}
+
+.article-image img {
+  width:100%;
+  height:100%;
+}
+
+.nested-column {
+  flex:2;
+}
+
+/* Floating Way*/
+/*nav.menu {
+  background:#fff;
+  overflow:auto;
+  zoom:1;
+  padding: .5em 1em;
+}
+
+nav.menu .logo img {
+  max-width:50px;
+  float:left;
+}
+
+nav.menu .links {
+  float:right;
+}
+
+nav.menu .links li {
+  display:inline-block;
+  padding-left:1em;
+  font-weight:bold;
+}*/
+
+/* Flexbox Way */
+nav.menu {
+  background: #fff;
+  display:flex;
+  justify-content: space-between;
+  padding: .5em 1.2em;
+  box-shadow: 1px 1px 2px rgb(14, 106, 181);
+}
+
+nav.menu .logo img {
+  max-width:50px;
+}
+
+nav.menu .links li{
+  display: inline-block;
+  padding-left:1em;
+  font-weight:bold;
+  list-style:none;
+}
+
+
+@media screen and (min-width: 800px) {
+  .columns,
+  .column {
+    display: flex;
+  }
+}
