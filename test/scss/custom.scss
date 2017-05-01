@@ -1,0 +1,31 @@
+/* User custom */
+
+.c-screen-education__image {
+  background: url('../img/austin.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.c-card__inner {
+  background:rgba(0,0,0,.7);
+  color:ghostwhite;
+}
+
+.c-card__header {
+  color:ghostwhite;
+}
+
+div#crowdvibe-projectc-card__item.js-toggle-modal.crowdvibe-project {
+  background: url('img/crowdvibe.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.c-card__icon {
+  color: #fff!important;
+}
+
+h4.c-card__header {
+  color:ghostwhite!important;
+}
